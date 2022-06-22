@@ -5,13 +5,17 @@
 */ 
 //Create a variable for Jon amd Jamie's attack strengths
 let jonSnowAttack = 25;
-let jamieLannisterAttack = 35;
+let jamieLannisterAttack = 45;
 
+//Before the battle begins, Jon and Jamie decide to compare attack strengths to get insight into who might win this battle. Using an if-else statement, console.log who has the greater attack strength.
+//What if we have a tie? Our code would actually give the win to Jamie, which is no good. Add in an else if to resolve this.
 
 if(jonSnowAttack > jamieLannisterAttack){
-    console.log("Jon Snow has a better attack than Jamie")
+    console.log("Jon Snow has a better attack than Jamie");
+}else if (jamieLannisterAttack > jonSnowAttack) {
+    console.log("Jamie has a better atack than Jon");
 }else {
-    console.log("Jamie has a better atack than Jon")
+    console.log(`Jon and Jamie have the same attack`);
 }
 
 /*Jamie, knowing he is the superior, initiates a fight with Jon. Let's create some 
@@ -32,8 +36,10 @@ if(jonSnowHealth <= jamieLannisterAttack){
     console.log(`Jon Snow's health is down to ${jonSnowHealth}`)
 }
 
+//Jon Snow, adamant he does not want to fight Jamie (can you blame him?), picks up a shield to help defend himself. Increase Jon's defense by 25.
 jonSnowDefense +=25;
 
+//Jamie attacks again - use an if/else to determine if Jon Snow can survive the attack. Make sure to account for Jon's defense. If he does not, console.log "Jon Snow has been slain." Otherwise, console.log Jon Snow's health.
 if(jonSnowHealth <= jamieLannisterAttack - jonSnowDefense){
     console.log("Jon Snow has been slain.");
 }else{
@@ -80,19 +86,21 @@ if(coinLandsHeads !== false){
 
 //for loops
 
-//for(let i = 0; i < 5; i++){
-    //if (jonSnowHealth <= 0 ){
-        //console.log(`Jon has been slain`)
-    //}else {
-        //jonSnowHealth -= (jamieLannisterAttack - jonSnowDefense);
-        //console.log(`Jon Snow's health is ${jonSnowHealth}`);
-    //}
-//}
+//Let's see how this battle will play out if it continues. Create a for loop that will have Jamie attack Jon 5 times. Console log Jon Snow's health after each attack.
 
-while(jonSnowHealth > 0){
+for(let i = 0; i < 5; i++){
     jonSnowHealth -= (jamieLannisterAttack - jonSnowDefense);
-    console.log(`Jon Snow's health is ${jonSnowHealth}`);
-    if (jonSnowHealth <= 0){
-        console.log(`jon has been slain`);
+    if (jonSnowHealth <= 0 ){
+        console.log(`Jon has been slain`);
+    }else {
+        console.log(`Jon Snow's health is ${jonSnowHealth}`);
     }
 }
+
+// while(jonSnowHealth > 0){
+//     jonSnowHealth -= (jamieLannisterAttack - jonSnowDefense);
+//     console.log(`Jon Snow's health is ${jonSnowHealth}`);
+//     if (jonSnowHealth <= 0){
+//         console.log(`jon has been slain`);
+//     }
+// }
